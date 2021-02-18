@@ -3,7 +3,7 @@ package de.mab.spring.jokesapp.controller;
 import de.mab.spring.jokesapp.services.QuoteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Created by mbreuer on 17.02.21.
@@ -17,7 +17,7 @@ public class QuoteController {
         this.quoteService = quoteService;
     }
 
-    @GetMapping({"/", ""})
+    @RequestMapping({"/", ""})
     public String getQuote(Model model) {
 
         model.addAttribute("joke", quoteService.getRandomQuote());
