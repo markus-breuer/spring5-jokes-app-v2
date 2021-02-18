@@ -9,7 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class ChuckNorrisQuoteService implements QuoteService {
 
-    private ChuckNorrisQuotes chuckNorrisQuotes = new ChuckNorrisQuotes();
+    private final ChuckNorrisQuotes chuckNorrisQuotes;
+
+    public ChuckNorrisQuoteService(ChuckNorrisQuotes chuckNorrisQuotes) {
+        this.chuckNorrisQuotes = chuckNorrisQuotes;
+    }
 
     @Override
     public String getRandomQuote() {
